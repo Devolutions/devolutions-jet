@@ -2,7 +2,7 @@
 $ModuleName = 'DevolutionsGateway'
 Push-Location $PSScriptRoot
 
-nuget sources Add -Name Default -Source https://api.nuget.org/v3/index.json
+& dotnet nuget add source 'https://api.nuget.org/v3/index.json' -n 'nuget.org'
 
 if (Test-Path Env:PSMODULE_OUTPUT_PATH) {
     $PSModuleOutputPath = $Env:PSMODULE_OUTPUT_PATH
